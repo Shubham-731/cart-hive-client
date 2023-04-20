@@ -9,6 +9,7 @@ import createEmotionCache from "@/utils/createEmotionCache";
 import ResponsiveAppBar from "@/components/AppBar";
 import { FC } from "react";
 import Providers from "@/contexts";
+import { Analytics } from "@vercel/analytics/react";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -46,6 +47,8 @@ export default function MyApp(props: MyAppProps) {
           </>
         </Providers>
       </ThemeProvider>
+
+      <Analytics />
     </CacheProvider>
   );
 }
