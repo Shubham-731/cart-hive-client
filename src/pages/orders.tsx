@@ -142,7 +142,7 @@ const Orders = () => {
           "";
 
         const res = await axios.post(
-          `${serverUrl}/api/orders`,
+          `https://cart-hive.onrender.com/api/orders`,
           { authToken },
           {
             headers: {

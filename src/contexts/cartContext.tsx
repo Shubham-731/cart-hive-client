@@ -138,7 +138,7 @@ function CartContextProvider({ children }: { children: JSX.Element }) {
         authToken,
       };
       const res = await axios.post(
-        `${serverUrl}/api/checkout/create-session`,
+        `https://cart-hive.onrender.com/api/checkout/create-session`,
         reqBody,
         {
           headers: {

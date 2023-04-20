@@ -15,7 +15,7 @@ const AuthContext = createContext<AuthContextType>({
   register: async () => {},
 });
 
-const serverUrl = process.env.SERVER_URL || "http://localhost:3001";
+const serverUrl: string = process.env.SERVER_URL || "http://localhost:3001";
 
 const AuthContextProvider = ({ children }: { children: JSX.Element }) => {
   const [user, setUser] = useState<UserTypes | null>(null);
@@ -28,7 +28,7 @@ const AuthContextProvider = ({ children }: { children: JSX.Element }) => {
 
       if (authToken) {
         const res = await axios.post(
-          `${serverUrl}/api/auth/get-user`,
+          `https://cart-hive.onrender.com/api/auth/get-user`,
           { authToken },
           {
             headers: {
@@ -56,7 +56,7 @@ const AuthContextProvider = ({ children }: { children: JSX.Element }) => {
       const { email, password, rememberMe } = values;
 
       const res = await axios.post(
-        `${serverUrl}/api/auth/login`,
+        `https://cart-hive.onrender.com/api/auth/login`,
         { email, password, rememberMe },
         {
           headers: {
@@ -88,7 +88,7 @@ const AuthContextProvider = ({ children }: { children: JSX.Element }) => {
       const { email, password, rememberMe, fullName } = values;
 
       const res = await axios.post(
-        `${serverUrl}/api/auth/register`,
+        `https://cart-hive.onrender.com/api/auth/register`,
         { email, password, rememberMe, fullName },
         {
           headers: {
