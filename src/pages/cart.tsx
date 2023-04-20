@@ -106,7 +106,7 @@ const Cart = () => {
         status: "ordered",
       }));
       const res = await axios.post(
-        `${serverUrl}/api/orders/create`,
+        `https://cart-hive.onrender.com/api/orders/create`,
         { authToken, products: updatedProducts },
         {
           headers: {
